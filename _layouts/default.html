@@ -20,7 +20,6 @@
       .wrapper {
         margin-left: 0px; /* Ensure space for the navigation menu */
         padding: 0px;
-        
       }
       .sidebar {
         width: 200px;
@@ -31,6 +30,11 @@
         background-color: #f4f4f4;
         padding: 20px;
         box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      }
+      .sidebar img {
+        width: 100%; /* Adjust image width to fit the sidebar */
+        border-radius: 10px; /* Optional: Add border radius for rounded corners */
+        margin-bottom: 15px; /* Space between image and content */
       }
       .sidebar h2 {
         font-size: 18px;
@@ -70,6 +74,7 @@
   <body>
     <!-- Sidebar with Table of Contents -->
     <div class="sidebar">
+      <img src="src=".//..//res//retrieval.gif" alt="Sidebar Image"> <!-- Add your image here -->
       <h2>Content</h2>
       <ul>
         <li><a href="#about">About Me</a></li>
@@ -80,19 +85,16 @@
     </div>
 
     <div class="wrapper">
-      <div class="project-media">
-        <img src=".//..//res//retrieval.gif" alt="Project GIF" width="500">
-      </div>
       <!-- About Me Section -->
       <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I'm César</p>
+        <p>Hello! I'm César, data scientist</p>
       </section>
 
       <!-- Projects Section -->
       <section id="projects">
         <h2>Projects</h2>
-        <h3>Project 1: Amazing Web App</h3>
+        <h3>Project 1: Information retrieval using vector database</h3>
         <p>This is a web application I developed to help users track their tasks and manage projects efficiently.</p>
 
         <!-- Project media: video and GIF -->
@@ -128,7 +130,7 @@
       </section>
 
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a>. Nice to see you here!</small></p>
+        <p><small>Nice to see you here!</small></p>
       </footer>
     </div>
   </body>
