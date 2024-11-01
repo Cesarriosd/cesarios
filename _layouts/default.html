@@ -1,145 +1,522 @@
-<!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    {% seo %}
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    {% include head-custom.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Your Name</title>
     <style>
-      body {
-        display: flex;
-        font-family: Arial, sans-serif;
-      }
-      .wrapper {
-        margin-left: 0px; /* Ensure space for the navigation menu */
-        padding: 0px;
-      }
-      .sidebar {
-        width: 200px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background-color: #f4f4f4;
-        padding: 20px;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-      }
-      .sidebar img {
-        width: 100%; /* Adjust image width to fit the sidebar */
-        border-radius: 10px; /* Optional: Add border radius for rounded corners */
-        margin-bottom: 15px; /* Space between image and content */
-      }
-      .sidebar h2 {
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
-      .sidebar ul {
-        list-style: none;
-        padding: 0;
-      }
-      .sidebar ul li {
-        margin-bottom: 10px;
-      }
-      .sidebar ul li a {
-        text-decoration: none;
-        color: #433;
-      }
-      .sidebar ul li a:hover {
-        text-decoration: underline;
-      }
-      section {
-        margin-bottom: 40px;
-      }
-      h2 {
-        font-size: 24px;
-        margin-top: 40px;
-      }
-      h3 {
-        font-size: 20px;
-      }
-      .project-media {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Sidebar with Table of Contents -->
-    <div class="sidebar">
-      <img src=".//..//res//margarito.jpg" alt="Image"> <!-- Add your image here -->
-      <h2>Julio César Ríos</h2>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#future">Future Plans</a></li>
-      </ul>
-    </div>
+        /* General Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
-    <div class="wrapper">
-      <!-- About Me Section -->
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-         Hello, everyone. I'm César, a <strong>Data Scientist</strong> with a passion for science, maths, coding, data, clever solutions and poetry. 
-        </p>
-        <p>I use advanced data science techniques to solve complex challenges across industries.</p>
-        <h3>Team player</h3>
-        <p>"If you want to go fast, go alone. If you want to go far, go together". African proverb</p>
-        <p>I am a true believer in teamwork, and I'm not only talking about devide the work. When you are sorrounded by "good" people it's easier
-        to grow up in all terms. Thats why I allways look for an eviroment that encourange the creation of an excellence enviroment, focused in the growing of the technicall and interpersonal skills of the team</p>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        h1, h2 {
+            color: #333;
+            font-weight: 300;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-color: #fc691a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column; /* Ensure flex items stack vertically */
+            background-image: linear-gradient(135deg, #2ed6fc 0%, #b0cef5 100%);
+            margin-top: 70px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .moving-gif {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: move-up-down 2s infinite alternate;
+        }
+
+        .moving-gif {
+            width: 100%; /* Sets the width to 100% of the parent container */
+            max-width: 700px; /* Limits the maximum width */
+            height: auto; /* Maintains the aspect ratio */
+            margin-bottom: 20px;
+        }
+
+
+
+        @keyframes move-up-down {
+            0% { transform: translate(-50%, 0); }
+            100% { transform: translate(-50%, 10px); }
+        }
+
+                /* Keyframe for Typewriter Effect */
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+
+        /* Hero Section h1 with Typewriter Effect */
         
-      </section>
+        
+        .hero-content {
+            width: 15ch;
+            animation: typewriter 3s steps(20), blink-caret 0.5s step-end infinite alternate;
+            color: rgb(19, 18, 18);
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: monospace;
+            font-size: 3.2em;
+            margin-bottom: 15px;
+            line-height: 1.2em; /* Maintain your desired line height */
+            position: relative; /* Make it relative for the pseudo-element */
+        }
 
-      <!-- Projects Section -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <h3>Project 1: Information retrieval using vector database</h3>
-        <p>This is a web application I developed to help users track their tasks and manage projects efficiently.</p>
+        .hero-content::after {
+            content: ''; /* Required to create the pseudo-element */
+            display: inline-block; /* Make it an inline-block to position it correctly */
+            width: 5px; /* Set the desired width for the cursor */
+            height: 2.2em; /* Shorter height for the cursor */
+            background-color: rgb(19, 18, 18); /* Cursor color */
+            position: absolute; /* Position it absolutely */
+            right: 0; /* Align it to the right */
+            bottom: 0; /* Align it to the bottom of the text */
+            animation: blink-caret 0.5s step-end infinite alternate; /* Add blinking effect */
+        }
+        
+        .hero-content h1 {
+            margin-top: 200px;
+            margin-bottom: 20px; /* Ensure there's space at the bottom of h1 */
+        }
+        .hero-content_sub {
+            margin-top: 1px; /* Add spacing between hero-content and hero-content_sub */
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        /* Subheading with Glow and Fade-In Effect */
+   
 
-        <!-- Project media: video and GIF -->
-        <div class="project-media">
-          <video controls width="500">
-            <source src="path-to-your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        .cta-button {
+            background-color: white;
+            color: #007BFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-          <img src=".//..//res//retrieval.gif" alt="Project GIF" width="500">
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+                /* About Section Styles */
+        .about {
+            padding: 60px 20px; /* Add padding for spacing */
+            background-color: #fff; /* Set background color */
+            border-radius: 8px; /* Optional: add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+        }
+
+        .about h2 {
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        .about p {
+            text-align: justify; /* Justify the paragraph text */
+            margin: 10px 0; /* Add margin to paragraphs */
+        }
+
+        .skills {
+            display: flex; /* Display skills inline */
+            justify-content: center; /* Center the skills */
+            flex-wrap: wrap; /* Allow wrapping of skills */
+            gap: 10px; /* Space between skills */
+        }
+
+        .skills span {
+            background-color: #007BFF; /* Skill badge background */
+            color: white; /* Text color */
+            padding: 5px 10px; /* Padding for badges */
+            border-radius: 20px; /* Rounded corners for badges */
+        }
+        /* Projects Section */
+        .projects {
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 200px;
+            justify-items: center;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-image {
+            width: 100%; /* Sets the width to 100% of the parent container */
+            max-width: 300px; /* Limits the maximum width */
+            height: auto; /* Maintains the aspect ratio */
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Interests Section */
+        .interests {
+            padding: 80px 20px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .interests h2 {
+            margin-bottom: 40px;
+        }
+
+        .interests img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Articles Section */
+        .articles {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .articles h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .article {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #333;
+            color: rgb(20, 19, 19);
+            text-align: center;
+        }
+        .contact h2{
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        
+        /* Light/Dark Mode Styles */
+        body.dark-mode {
+            background-color: #765e5e;
+            color: #fff;
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode p, body.dark-mode a {
+            color: #eaecf1; /* White text for dark mode */
+        }
+
+        body.dark-mode .hero {
+            background-image: linear-gradient(135deg, #3b3d43 0%, #333 100%);
+        }
+
+        body.dark-mode header {
+            background-color: #2c2c2c;
+            color: #2b2727; /* Ensure header text is white in dark mode */
+        }
+        body.dark-mode .cta-button {
+            background-color: rgb(38, 38, 44);
+            color: #e5edf5;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        body.dark-mode .about {
+            background-color: #5f5e5e;
+            color: #35acf5; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .project-card {
+            background-color: #333;
+            color: #35acf5; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .projects {
+            background-color: #4e4f4f;
+            color: #35acf5; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .interests {
+            background-color: #4c4b4b;
+            color: #35acf5; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .articles {
+            background-color: #5a5b5b;
+            color: #35acf5; /* Ensure project card text is white in dark mode */
+        }
+
+        body.dark-mode .contact-info a {
+            color: white; /* #00BFFF Light blue for links in dark mode */
+        }
+
+        body.dark-mode .skills span {
+            background-color:  #8ba4fe; /* Keep badge background */
+            color: white; /* Keep text color for contrast */
+        }
+
+        /* Light/Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            left: 20px; /* Changed to left for top-left positioning */
+            z-index: 2000; /* Ensures it stays on top */
+            background-color: rgb(226, 233, 236); /* Button background */
+            border: 1px solid #380501; /* Button border */
+            border-radius: 4px; /* Rounded corners */
+            padding: 10px; /* Button padding */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Light/Dark Mode Toggle -->
+    <div class="theme-toggle">
+        <button id="toggle-button">&#x1F31E;|&#x1F31A;</button>
+    </div>  
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Animation -->
+    <section class="hero">
+        <img src=".\\res\\Skate_Mehring-42.jpg" alt="Moving GIF" class="moving-gif">
+         <div class="hero-content">
+            <h1>Hello, MF</h1>
         </div>
+        <div class="hero-content_sub">
+            <!--<h1> Hello, MF</h1>-->
+            <p>Data Scientist | Machine Learning | Actuarial Science | Statistics | Causal Inferen  ce</p>
+            <a href="#projects" class="cta-button">See My Work</a>
+        </div>
+    </section>
 
-        <h3>Project 2: Portfolio Website</h3>
-        <p>This is my personal portfolio website, where I showcase my work and share my professional journey.</p>
-      </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Data Visualization</span>
+            <span>AI</span>
+            <span>Statistics</span>
+            <span>Statistics</span>
+            <span>Statistics</span>
+            <span>Statistics</span>
+            <span>Statistics</span>
+        </div>
+        <p>I am a passionate data scientist with expertise in machine learning, data analysis, and artificial intelligence. My work involves solving real-world problems through data-driven solutions.</p>
+    </section>
 
-      <!-- Interests Section -->
-      <section id="interests">
-        <h2>Interests</h2>
-        <p>I have a wide range of interests, including:</p>
-        <ul>
-          <li>Web Development</li>
-          <li>Artificial Intelligence</li>
-          <li>Open Source Projects</li>
-          <li>Photography</li>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src=".\\res\\Skate_Mehring-42.jpg" alt="Predicting House Prices" class="project-image">
+                <h3>Predicting House Prices Using Machine Learning</h3>
+                <p>Built a regression model using Python to predict house prices based on key features from a dataset. Improved model performance with feature engineering and model tuning.</p>
+                <a href="#contact" class="project-link">View Project</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="customer_segmentation.jpg" alt="Customer Segmentation">
+                <h3>Customer Segmentation with K-Means Clustering</h3>
+                <p>Performed customer segmentation analysis using K-Means clustering to improve targeted marketing strategies for a retail client.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="sentiment_analysis.jpg" alt="Sentiment Analysis">
+                <h3>Sentiment Analysis on Social Media Data</h3>
+                <p>Developed a natural language processing model to analyze sentiments of tweets related to a brand using Python and NLTK.</p>
+                <a href="#interests" class="project-link">View Project</a>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="sentiment_analysis.jpg" alt="Sentiment Analysis">
+                <h3>Sentiment Analysis on Social Media Data</h3>
+                <p>Developed a natural language processing model to analyze sentiments of tweets related to a brand using Python and NLTK.</p>
+                <a href="#interests" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests">
+        <h2>My Interests</h2>
+        <img src="your-image.jpg" alt="Interest Image">
+        <p>I enjoy exploring new technologies and staying updated with industry trends. Check out my favorite video below!</p>
+        <video width="600" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <h2>Article Abstracts</h2>
+        <div class="article">
+            <h3>Article Title 1</h3>
+            <p><strong>Abstract:</strong> This article discusses the impact of XYZ on ABC, exploring various methodologies and their outcomes.</p>
+        </div>
+        <div class="article">
+            <h3>Article Title 2</h3>
+            <p><strong>Abstract:</strong> An in-depth analysis of the effects of DEF in the context of GHI, providing insights into potential applications.</p>
+        </div>
+        <div class="article">
+            <h3>Article Title 3</h3>
+            <p><strong>Abstract:</strong> This research investigates the relationship between JKL and MNO, offering a comprehensive review of existing literature.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <ul class="contact-info">
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">yourprofile</a></li>
         </ul>
-      </section>
+    </section>
 
-      <!-- Future Plans Section -->
-      <section id="future">
-        <h2>Future Plans</h2>
-        <p>In th.</p>
-      </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
 
-      <footer>
-        <p>&#128640; Nice to see you here!</p>
-      </footer>
-    </div>
-  </body>
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const body = document.body;
+    
+        // Initial setting of the button text with emoji
+        toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
+    
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            // Update button text based on the current mode
+            toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
+        });
+    </script>
+</body>
 </html>
