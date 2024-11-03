@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+cd<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Your Name</title>
+    <title>&#128300;Portfolio</title>
     <style>
         /* General Styles */
         *, *::before, *::after {
@@ -59,14 +59,14 @@
         }
 
         .nav-links li a:hover {
-            background-color: #007BFF;
+            background-color: #61a8f4;
             color: white;
         }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background-color: #fc691a;
+            background-color: #7fb7f3;
             color: white;
             display: flex;
             justify-content: center;
@@ -74,10 +74,10 @@
             text-align: center;
             padding: 20px;
             flex-direction: column; /* Ensure flex items stack vertically */
-            background-image: linear-gradient(135deg, #2ed6fc 0%, #b0cef5 100%);
-            margin-top: 70px;
+            background-image: linear-gradient(135deg, #c4cee4  0%, #85a9f2  100%);
+            margin-top: 50px;
             position: relative;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .moving-gif {
@@ -90,7 +90,7 @@
 
         .moving-gif {
             width: 100%; /* Sets the width to 100% of the parent container */
-            max-width: 700px; /* Limits the maximum width */
+            max-width: 500px; /* Limits the maximum width */
             height: auto; /* Maintains the aspect ratio */
             margin-bottom: 20px;
             border-radius: 10px; /* Optional: Add border radius for rounded corners */
@@ -122,14 +122,15 @@
         
         
         .hero-content {
-            width: 15ch;
-            animation: typewriter 3s steps(20), blink-caret 0.5s step-end infinite alternate;
+            width: 25ch;
+            animation: typewriter 4s steps(30), blink-caret 0.5s step-end infinite alternate;
             color: rgb(19, 18, 18);
             white-space: nowrap;
             overflow: hidden;
             font-family: monospace;
+            font-weight: bold;
             font-size: 3.2em;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             line-height: 1.2em; /* Maintain your desired line height */
             position: relative; /* Make it relative for the pseudo-element */
         }
@@ -148,6 +149,7 @@
         
         .hero-content h1 {
             margin-top: 200px;
+            font-weight: bold;
             margin-bottom: 20px; /* Ensure there's space at the bottom of h1 */
         }
         .hero-content_sub {
@@ -160,7 +162,7 @@
 
         .cta-button {
             background-color: white;
-            color: #007BFF;
+            color: #85a9f2;
             padding: 10px 20px;
             text-decoration: none;
             font-weight: bold;
@@ -169,7 +171,7 @@
         }
 
         .cta-button:hover {
-            background-color: #0056b3;
+            background-color: #7fb7f3;
         }
                 /* About Section Styles */
         .about {
@@ -197,7 +199,7 @@
         }
 
         .skills span {
-            background-color: #007BFF; /* Skill badge background */
+            background-color: #7fb7f3; /* Skill badge background */
             color: white; /* Text color */
             padding: 5px 10px; /* Padding for badges */
             border-radius: 20px; /* Rounded corners for badges */
@@ -240,6 +242,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
+
         /* Interests Section */
         .interests {
             padding: 80px 20px;
@@ -256,6 +259,49 @@
             height: auto;
             margin-bottom: 20px;
         }
+
+
+        /* Project detail section Section */
+        .project-detail {
+            scroll-margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .project-detail h2 {
+            margin-bottom: 40px;
+            
+        }
+        .project-detail .content {
+            display: flex;
+            width: 100%;
+        }
+
+        .project-detail-text, .project-detail-video {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-detail-text {
+            flex: 0.5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-detail-video {
+            flex: 1;
+        }
+        .project-detail-video video {
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* Finish detail section Section */
+
 
         /* Articles Section */
         .articles {
@@ -311,14 +357,17 @@
         
         /* Light/Dark Mode Styles */
         body.dark-mode {
-            background-color: #765e5e;
+            background-color: #5f5e5e;
             color: #fff;
         }
 
         body.dark-mode h1, body.dark-mode h2, body.dark-mode p, body.dark-mode a {
             color: #eaecf1; /* White text for dark mode */
         }
-
+        body.dark-mode .nav-links li a:hover {
+            background-color: #ecf4fd;
+            color: rgb(15, 16, 16);
+        }
         body.dark-mode .hero {
             background-image: linear-gradient(135deg, #3b3d43 0%, #333 100%);
         }
@@ -327,6 +376,7 @@
             background-color: #2c2c2c;
             color: #2b2727; /* Ensure header text is white in dark mode */
         }
+        
         body.dark-mode .cta-button {
             background-color: rgb(38, 38, 44);
             color: #e5edf5;
@@ -338,32 +388,32 @@
         }
         body.dark-mode .about {
             background-color: #5f5e5e;
-            color: #35acf5; /* Ensure project card text is white in dark mode */
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
         }
         body.dark-mode .project-card {
             background-color: #333;
-            color: #35acf5; /* Ensure project card text is white in dark mode */
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
         }
         body.dark-mode .projects {
             background-color: #4e4f4f;
-            color: #35acf5; /* Ensure project card text is white in dark mode */
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
         }
         body.dark-mode .interests {
             background-color: #4c4b4b;
-            color: #35acf5; /* Ensure project card text is white in dark mode */
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
         }
         body.dark-mode .articles {
             background-color: #5a5b5b;
-            color: #35acf5; /* Ensure project card text is white in dark mode */
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
         }
 
         body.dark-mode .contact-info a {
-            color: white; /* #00BFFF Light blue for links in dark mode */
+            color: #eaecf1; /* #00BFFF Light blue for links in dark mode */
         }
 
         body.dark-mode .skills span {
-            background-color:  #8ba4fe; /* Keep badge background */
-            color: white; /* Keep text color for contrast */
+            background-color:  #2b2d33; /* Keep badge background */
+            color: #eaecf1; /* Keep text color for contrast */
         }
 
         /* Light/Dark Mode Toggle */
@@ -401,13 +451,13 @@
 
     <!-- Hero Section with Animation -->
     <section class="hero">
-        <img src=".\\..\\res\\margarito.jpg" alt="Moving GIF" class="moving-gif">
+        <img src=".\\res\\margarito.jpeg" alt="Moving GIF" class="moving-gif">
          <div class="hero-content">
-            <h1>Hello, MF</h1>
+            <h1>Hi, I'm César &#127940;</h1>
         </div>
         <div class="hero-content_sub">
             <!--<h1> Hello, MF</h1>-->
-            <p>Data Scientist | Machine Learning | Actuarial Science | Statistics | Causal Inferen  ce</p>
+            <p>Data Scientist | Machine Learning | Actuarial Science | Statistics | Causal Inference</p>
             <a href="#projects" class="cta-button">See My Work</a>
         </div>
     </section>
@@ -435,34 +485,43 @@
         <div class="project-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <img src=".\\res\\Skate_Mehring-42.jpg" alt="Predicting House Prices" class="project-image">
-                <h3>Predicting House Prices Using Machine Learning</h3>
+                <img src=".\\res\\rick_and_morty.jpg" alt="Predicting House Prices" class="project-image">
+                <h3>Tall with your books</h3>
                 <p>Built a regression model using Python to predict house prices based on key features from a dataset. Improved model performance with feature engineering and model tuning.</p>
-                <a href="#contact" class="project-link">View Project</a>
+                <a href="#project-detail" class="project-link">View Project</a>
             </div>
             <!-- Project 2 -->
             <div class="project-card">
-                <img src="customer_segmentation.jpg" alt="Customer Segmentation">
+                <img src=".\\res\\rick_and_morty.jpg"" alt="Customer Segmentation" class = "project-image">
                 <h3>Customer Segmentation with K-Means Clustering</h3>
                 <p>Performed customer segmentation analysis using K-Means clustering to improve targeted marketing strategies for a retail client.</p>
                 <a href="#" class="project-link">View Project</a>
             </div>
             <!-- Project 3 -->
             <div class="project-card">
-                <img src="sentiment_analysis.jpg" alt="Sentiment Analysis">
+                <img src=".\\res\\rick_and_morty.jpg"" alt="Sentiment Analysis" class = "project-image">
                 <h3>Sentiment Analysis on Social Media Data</h3>
                 <p>Developed a natural language processing model to analyze sentiments of tweets related to a brand using Python and NLTK.</p>
                 <a href="#interests" class="project-link">View Project</a>
             </div>
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="sentiment_analysis.jpg" alt="Sentiment Analysis">
-                <h3>Sentiment Analysis on Social Media Data</h3>
-                <p>Developed a natural language processing model to analyze sentiments of tweets related to a brand using Python and NLTK.</p>
-                <a href="#interests" class="project-link">View Project</a>
+
+    </section>
+    <!-- project-detail Section -->
+    <section id="project-detail" class="project-detail">
+        <h2>Talk with your books</h2>
+        <div class="content">
+            <div class="project-detail-text">
+                <p>In this project I developed a retieval system using a vector database and sentence embeddings for my favorite books</p>
+                <!--<p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>-->
+            </div>
+            <div class="project-detail-video">
+                <video controls>
+                    <source src=".\\res\\video.webm" type="video/webm">
+                </video>
             </div>
         </div>
     </section>
+
 
     <!-- Interests Section -->
     <section id="interests" class="interests">
