@@ -557,3 +557,32 @@ cd<!DOCTYPE html>
             <p><strong>Abstract:</strong> This research investigates the relationship between JKL and MNO, offering a comprehensive review of existing literature.</p>
         </div>
     </section>
+   <!-- Contact Section -->
+   <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <ul class="contact-info">
+        <li><a href="mail">&#128236;: cesarios@ciencias.unam.mx</a></li>
+        <li><a href="linkedin" target="_blank">  &#x1F4BC;: https://mx.linkedin.com/in/jcriosd</a></li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>&#128640; Nice to see you here!</p>
+</footer>
+
+<script>
+    const toggleButton = document.getElementById('toggle-button');
+    const body = document.body;
+
+    // Initial setting of the button text with emoji
+    toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
+
+    toggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        // Update button text based on the current mode
+        toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
+    });
+</script>
+</body>
+</html>
