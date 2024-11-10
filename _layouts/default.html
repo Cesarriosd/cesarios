@@ -442,8 +442,8 @@ cd<!DOCTYPE html>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#interests">Interests</a></li>
-                <li><a href="#articles">Articles</a></li>
+                <!--<li><a href="#interests">Interests</a></li>-->
+                <li><a href="#articles">Studying</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -517,12 +517,12 @@ cd<!DOCTYPE html>
         <h2>Talk with your books</h2>
         <div class="content">
             <div class="project-detail-text">
-                <p>In this project I developed a retieval system using a vector database and sentence embeddings for my favorite books</p>
+                <p>In this project, I developed a retieval system using a vector database and sentence embeddings for my favorite books</p>
                 <!--<p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>-->
             </div>
             <div class="project-detail-video">
                 <video controls>
-                    <source src=".\\res\\video.webm" type="video/webm">
+                    <source src=".\\res\\marco_aurelio.webm" type="video/webm">
                 </video>
             </div>
         </div>
@@ -530,6 +530,7 @@ cd<!DOCTYPE html>
 
 
     <!-- Interests Section -->
+     <!--
     <section id="interests" class="interests">
         <h2>My Interests</h2>
         <img src="your-image.jpg" alt="Interest Image">
@@ -540,14 +541,15 @@ cd<!DOCTYPE html>
         </video>
         <p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>
     </section>
-
+    -->
     <!-- Articles Section -->
     <section id="articles" class="articles">
-        <h2>Article Abstracts</h2>
+        <h2>Articles</h2>
         <div class="article">
-            <h3>Article Title 1</h3>
-            <p><strong>Abstract:</strong> This article discusses the impact of XYZ on ABC, exploring various methodologies and their outcomes.</p>
+            <h3><a href="https://arxiv.org/pdf/2404.17723">Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering</a></h3>
+            <p><strong>Abstract:</strong> In this article the authors propose the usage of Large Language Models and Knowledge graphs to improve RAG. The main problems that the authors (LinkedIn) have to tackle are: Compromised Retrieval Accuracy from Ignoring Structures and  Reduced Answer Quality from Segmentation. They leverage knowledge graph capabilities using two types of information: Intra-ticket tree parsing (structure of the ticket itself) and inter-ticket connection (relation between different tickets), with this information the LLM is fed to create a better final answer. With this approach they reduce time of response from 40 hrs to 15 hrs (mean).</p>
         </div>
+        <!-- 
         <div class="article">
             <h3>Article Title 2</h3>
             <p><strong>Abstract:</strong> An in-depth analysis of the effects of DEF in the context of GHI, providing insights into potential applications.</p>
@@ -556,6 +558,7 @@ cd<!DOCTYPE html>
             <h3>Article Title 3</h3>
             <p><strong>Abstract:</strong> This research investigates the relationship between JKL and MNO, offering a comprehensive review of existing literature.</p>
         </div>
+    -->
     </section>
    <!-- Contact Section -->
    <section id="contact" class="contact">
