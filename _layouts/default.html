@@ -1,30 +1,559 @@
+cd<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128300;Portfolio</title>
+    <style>
+        /* General Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <ul class="contact-info">
-            <li><a href="mail">&#128236;: cesarios@ciencias.unam.mx</a></li>
-            <li><a href="linkedin" target="_blank">  &#x1F4BC;: https://mx.linkedin.com/in/jcriosd</a></li>
-        </ul>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        h1, h2 {
+            color: #333;
+            font-weight: 300;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #61a8f4;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background-color: #7fb7f3;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column; /* Ensure flex items stack vertically */
+            background-image: linear-gradient(135deg, #f2f4fa  0%, #85a9f2  100%);
+            margin-top: 50px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .moving-gif {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: move-up-down 2s infinite alternate;
+        }
+
+        .moving-gif {
+            width: 100%; /* Sets the width to 100% of the parent container */
+            max-width: 500px; /* Limits the maximum width */
+            height: auto; /* Maintains the aspect ratio */
+            margin-bottom: 20px;
+            border-radius: 10px; /* Optional: Add border radius for rounded corners */
+            margin-bottom: 15px; /* Space between image and content */
+        }
+
+
+
+        @keyframes move-up-down {
+            0% { transform: translate(-50%, 0); }
+            100% { transform: translate(-50%, 10px); }
+        }
+
+                /* Keyframe for Typewriter Effect */
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+
+        /* Hero Section h1 with Typewriter Effect */
+        
+        
+        .hero-content {
+            width: 24ch;
+            animation: typewriter 4s steps(30), blink-caret 0.5s step-end infinite alternate;
+            color: rgb(19, 18, 18);
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 3.2em;
+            margin-bottom: 5px;
+            line-height: 1.2em; /* Maintain your desired line height */
+            position: relative; /* Make it relative for the pseudo-element */
+        }
+
+        .hero-content::after {
+            content: ''; /* Required to create the pseudo-element */
+            display: inline-block; /* Make it an inline-block to position it correctly */
+            width: 5px; /* Set the desired width for the cursor */
+            height: 2.2em; /* Shorter height for the cursor */
+            background-color: rgb(19, 18, 18); /* Cursor color */
+            position: absolute; /* Position it absolutely */
+            right: 0; /* Align it to the right */
+            bottom: 0; /* Align it to the bottom of the text */
+            animation: blink-caret 0.5s step-end infinite alternate; /* Add blinking effect */
+        }
+        
+        .hero-content h1 {
+            margin-top: 200px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Ensure there's space at the bottom of h1 */
+        }
+        .hero-content_sub {
+            margin-top: 1px; /* Add spacing between hero-content and hero-content_sub */
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        /* Subheading with Glow and Fade-In Effect */
+   
+
+        .cta-button {
+            background-color: white;
+            color: #85a9f2;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #7fb7f3;
+        }
+                /* About Section Styles */
+        .about {
+            padding: 60px 20px; /* Add padding for spacing */
+            background-color: #fff; /* Set background color */
+            border-radius: 8px; /* Optional: add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+        }
+
+        .about h2 {
+            text-align: center; /* Center the heading */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        .about p {
+            text-align: justify; /* Justify the paragraph text */
+            margin: 10px 0; /* Add margin to paragraphs */
+        }
+
+        .skills {
+            display: flex; /* Display skills inline */
+            justify-content: center; /* Center the skills */
+            flex-wrap: wrap; /* Allow wrapping of skills */
+            gap: 10px; /* Space between skills */
+        }
+
+        .skills span {
+            background-color: #7fb7f3; /* Skill badge background */
+            color: white; /* Text color */
+            padding: 5px 10px; /* Padding for badges */
+            border-radius: 20px; /* Rounded corners for badges */
+        }
+        /* Projects Section */
+        .projects {
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+        }
+
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 200px;
+            justify-items: center;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-image {
+            width: 100%; /* Sets the width to 100% of the parent container */
+            max-width: 300px; /* Limits the maximum width */
+            height: auto; /* Maintains the aspect ratio */
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Interests Section */
+        .interests {
+            padding: 80px 20px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .interests h2 {
+            margin-bottom: 40px;
+        }
+
+        .interests img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+
+        /* Project detail section Section */
+        .project-detail {
+            scroll-margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .project-detail h2 {
+            margin-bottom: 40px;
+            
+        }
+        .project-detail .content {
+            display: flex;
+            width: 100%;
+        }
+
+        .project-detail-text, .project-detail-video {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-detail-text {
+            flex: 0.5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-detail-video {
+            flex: 1;
+        }
+        .project-detail-video video {
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* Finish detail section Section */
+
+
+        /* Articles Section */
+        .articles {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .articles h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .article {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #333;
+            color: rgb(20, 19, 19);
+            text-align: center;
+        }
+        .contact h2{
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        
+        /* Light/Dark Mode Styles */
+        body.dark-mode {
+            background-color: #5f5e5e;
+            color: #fff;
+        }
+
+        body.dark-mode h1, body.dark-mode h2, body.dark-mode p, body.dark-mode a {
+            color: #eaecf1; /* White text for dark mode */
+        }
+        body.dark-mode .nav-links li a:hover {
+            background-color: #ecf4fd;
+            color: rgb(15, 16, 16);
+        }
+        body.dark-mode .hero {
+            background-image: linear-gradient(135deg, #3b3d43 0%, #333 100%);
+        }
+
+        body.dark-mode header {
+            background-color: #2c2c2c;
+            color: #2b2727; /* Ensure header text is white in dark mode */
+        }
+        
+        body.dark-mode .cta-button {
+            background-color: rgb(38, 38, 44);
+            color: #e5edf5;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        body.dark-mode .about {
+            background-color: #5f5e5e;
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .project-card {
+            background-color: #333;
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .projects {
+            background-color: #4e4f4f;
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .interests {
+            background-color: #4c4b4b;
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
+        }
+        body.dark-mode .articles {
+            background-color: #5a5b5b;
+            color: #eaecf1; /* Ensure project card text is white in dark mode */
+        }
+
+        body.dark-mode .contact-info a {
+            color: #eaecf1; /* #00BFFF Light blue for links in dark mode */
+        }
+
+        body.dark-mode .skills span {
+            background-color:  #2b2d33; /* Keep badge background */
+            color: #eaecf1; /* Keep text color for contrast */
+        }
+
+        /* Light/Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            left: 20px; /* Changed to left for top-left positioning */
+            z-index: 2000; /* Ensures it stays on top */
+            background-color: rgb(226, 233, 236); /* Button background */
+            border: 1px solid #380501; /* Button border */
+            border-radius: 4px; /* Rounded corners */
+            padding: 10px; /* Button padding */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Light/Dark Mode Toggle -->
+    <div class="theme-toggle">
+        <button id="toggle-button">&#x1F31E;|&#x1F31A;</button>
+    </div>  
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Animation -->
+    <section class="hero">
+        <img src=".\\res\\margarito.jpeg" alt="Moving GIF" class="moving-gif">
+         <div class="hero-content">
+            <h1>Hi, I'm César&#127940;</h1>
+        </div>
+        <div class="hero-content_sub">
+            <!--<h1> Hello, MF</h1>-->
+            <p>Data Scientist | Machine Learning | Actuarial Science | Statistics | Causal Inference</p>
+            <a href="#projects" class="cta-button">See My Work</a>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&#128640; Nice to see you here!</p>
-    </footer>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="skills">
+            <span>Python</span>
+            <span>Machine Learning</span>
+            <span>Statistics</span>
+            <span>AI</span>
+            <span>NLP</span>
+            <span>Computer Vision</span>
+            <span>Optimization</span>
+            <span>Causal inference</span>
+        </div>
+        <p>I’m a results-driven <b>Data Scientist</b> with over <b>4 years of experience</b> transforming raw data into strategic business insights. I specialize in leveraging machine learning, statistics and AI to develop solutions to complex problems. I'm a passionate about combining data, math, cutting-edge algorithms and the latest technological advances to create <b>real-world impact.</b></p>
+        <h1>Team Player</h1>
 
-    <script>
-        const toggleButton = document.getElementById('toggle-button');
-        const body = document.body;
-    
-        // Initial setting of the button text with emoji
-        toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
-    
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            // Update button text based on the current mode
-            toggleButton.innerHTML = body.classList.contains('dark-mode') ? '&#127769;' : '&#127774;'; // 🌙 for dark mode, ☀️ for light mode
-        });
-    </script>
-</body>
-</html>
+        <p><b>I’m a strong team player.</b> I believe the best solutions come from collaboration, and I enjoy working with diverse teams and minds. My ability to communicate complex ideas clearly and work with others to achieve common goals is one of my strongest assets. </p>
+        <h1>Expertise</h1>
+        <p>My expertise spans the insurance and manufacturing sectors, where I’ve developed and implemented data-driven solutions that optimize processes, improve decision-making, and uncover hidden opportunities. I focus on building robust and scalable solutions that deliver measurable impact.</p>
+        <br>
+        <p><i>“I have no special talents. I am only passionately curious.” ― Albert Einstein</i></p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src=".\\res\\rick_and_morty.jpg" alt="Predicting House Prices" class="project-image">
+                <h3>Tall with your books</h3>
+                <p>Built a regression model using Python to predict house prices based on key features from a dataset. Improved model performance with feature engineering and model tuning.</p>
+                <a href="#project-detail" class="project-link">View Project</a>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src=".\\res\\rick_and_morty.jpg"" alt="Customer Segmentation" class = "project-image">
+                <h3>Customer Segmentation with K-Means Clustering</h3>
+                <p>Performed customer segmentation analysis using K-Means clustering to improve targeted marketing strategies for a retail client.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src=".\\res\\rick_and_morty.jpg"" alt="Sentiment Analysis" class = "project-image">
+                <h3>Sentiment Analysis on Social Media Data</h3>
+                <p>Developed a natural language processing model to analyze sentiments of tweets related to a brand using Python and NLTK.</p>
+                <a href="#interests" class="project-link">View Project</a>
+            </div>
+
+    </section>
+    <!-- project-detail Section -->
+    <section id="project-detail" class="project-detail">
+        <h2>Talk with your books</h2>
+        <div class="content">
+            <div class="project-detail-text">
+                <p>In this project I developed a retieval system using a vector database and sentence embeddings for my favorite books</p>
+                <!--<p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>-->
+            </div>
+            <div class="project-detail-video">
+                <video controls>
+                    <source src=".\\res\\video.webm" type="video/webm">
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests">
+        <h2>My Interests</h2>
+        <img src="your-image.jpg" alt="Interest Image">
+        <p>I enjoy exploring new technologies and staying updated with industry trends. Check out my favorite video below!</p>
+        <video width="600" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <h2>Article Abstracts</h2>
+        <div class="article">
+            <h3>Article Title 1</h3>
+            <p><strong>Abstract:</strong> This article discusses the impact of XYZ on ABC, exploring various methodologies and their outcomes.</p>
+        </div>
+        <div class="article">
+            <h3>Article Title 2</h3>
+            <p><strong>Abstract:</strong> An in-depth analysis of the effects of DEF in the context of GHI, providing insights into potential applications.</p>
+        </div>
+        <div class="article">
+            <h3>Article Title 3</h3>
+            <p><strong>Abstract:</strong> This research investigates the relationship between JKL and MNO, offering a comprehensive review of existing literature.</p>
+        </div>
+    </section>
