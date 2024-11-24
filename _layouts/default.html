@@ -67,7 +67,7 @@ cd<!DOCTYPE html>
         .hero {
             min-height: 100vh;
             background-color: #7fb7f3;
-            color: white;
+            color: #7fb7f3;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -367,14 +367,20 @@ cd<!DOCTYPE html>
             color: #fff;
         }
 
-        body.dark-mode h1, body.dark-mode h2, body.dark-mode p, body.dark-mode a {
+        body.dark-mode h1 {
+            color: #232424;
+        }
+        
+        body.dark-mode h2, body.dark-mode p, body.dark-mode a {
             color: #dbdfe7; /* White text for dark mode */
         }
         body.dark-mode .nav-links li a:hover {
             background-color: #ecf4fd;
             color: rgb(15, 16, 16);
         }
+        
         body.dark-mode .hero {
+            color:  rgb(15, 16, 16);
             background-image: 
             url('.\\res\\clouds.webp'),
             linear-gradient(135deg, #3b3d43 0%, #333 100%);
@@ -384,6 +390,10 @@ cd<!DOCTYPE html>
             margin-top: 50px;
             position: relative;
             margin-bottom: 10px;
+        }
+
+        body.dark-mode .hero-content_sub p {
+            color:  rgb(15, 16, 16);
         }
 
         body.dark-mode header {
