@@ -251,17 +251,17 @@
 
 
         /* Interests Section */
-        .interests {
+        .writing {
             padding: 80px 20px;
             background-color: #e9ecef;
             text-align: center;
         }
 
-        .interests h2 {
+        .writing h2 {
             margin-bottom: 40px;
         }
 
-        .interests img {
+        .writing img {
             width: 300px;
             height: auto;
             margin-bottom: 20px;
@@ -471,7 +471,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <!--<li><a href="#interests">Interests</a></li>-->
+                <li><a href="#writing">Writing</a></li>
                 <li><a href="#articles">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -588,18 +588,6 @@
     
     <!-- Interests Section -->
      
-    <section id="interests" class="interests">
-        <h2>My Interests</h2>
-        <img src="your-image.jpg" alt="Interest Image">
-        <p>I enjoy exploring new technologies and staying updated with industry trends. Check out my favorite video below!</p>
-        <video width="600" controls>
-            <source src="your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p><a href="https://example.com" target="_blank">Visit my blog for more!</a></p>
-    </section>
-    
-    <!-- Articles Section -->
     <section id="articles" class="articles">
         <h2>Articles</h2>
         <div class="article">
@@ -612,6 +600,31 @@
             <h3><a href="https://arxiv.org/html/2411.11922v1">SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking with Motion-Aware Memory</a></h3>
             <p><strong>Abstract:</strong> This paper proposes an adaptation of SAM 2, specifically designed for visual object tracking. SAMURAI operates in real time and incorporates a streaming memory architecture which enables it to process video frames sequentially  while maintaining context over long sequences. The method proposed incorporates two key advancements: 1) a motion modeling system that refines the mask selection, enabling more accurate object position prediction in complex scenarios, and 2) an optimized memory selection mechanism that leverage a hybrid scoring system, combining the original mask affinity object and motion scores to retain more relevant historical information.</p>
             <h3>Time Series</h3>
+            <h3><a href="https://peerj.com/preprints/3190.pdf">Forecasting at Scale</a></h3>
+            <p><strong>Abstract:</strong> This article presents “Prophet”: an additive regression model with four main components: 1) a piecewise linear or logistic growth curve trend; 2) a yearly seasonal component modelled using Fourier series; 3) a weekly seasonal component using dummy variables; and 4) a user-provided list of important holidays.</p>
+            <p>Some remarkable points are that Prophet automatically detects changes in trends by selecting changepoints from the data and the main objective of this procedure is to face the problem of generating reliable time series forecasts at scale, this means “forecasting a large number and a variety of time series”. </p>
+            <h3><a href="https://www.mdpi.com/2079-9292/10/23/3001">Deep Time-Series Clustering: A Review</a></h3>
+            <p>In progress. </p>
+            <h3><a href="https://arxiv.org/pdf/2208.01152">Interpretable Time Series Clustering Using Local Explanations/a></h3>
+            <p>In progress. </p>
+
+            
+        </div>https://example.com" target="_blank">Visit my blog for more!</a></p>
+    </section>
+    
+    <!-- Articles Section -->
+    <section id="writing" class="writing">
+        <h2>Writing</h2>
+        <div class="article">
+            <h3>Literature</h3>
+            <h3><a href="https://arxiv.org/pdf/2411.05815">Graph Neural Networks for Financial Fraud Detection: A Review</a></h3>
+            <p><strong>Abstract:</strong> This review explores the role of Graph Neural Networks (GNNs) in addressing fraud detection and proposes a unified framework that categorises existing GNN methodologies applied to this field. Specifically, examining 4 main architectures: Graph Convolutional Networks (GCNs), Graph Attention Networks (GANs) ,Graph Temporal Networks (GTNs) and Heterogenous Graph Neural Networks.</p>
+            <h3><a href="https://arxiv.org/pdf/2404.17723">Retrieval-Augmented Generation with Knowledge Graphs for Customer Service Question Answering</a></h3>
+            <p><strong>Abstract:</strong> In this article the authors propose the usage of Large Language Models and Knowledge graphs to improve RAG. The main problems that the authors (LinkedIn) have to tackle are: Compromised Retrieval Accuracy from Ignoring Structures and  Reduced Answer Quality from Segmentation. They leverage knowledge graph capabilities using two types of information: Intra-ticket tree parsing (structure of the ticket itself) and inter-ticket connection (relation between different tickets), with this information the LLM is fed to create a better final answer. With this approach they reduce time of response from 40 hrs to 15 hrs (mean).</p>
+            <h3>Philosopy</h3>
+            <h3><a href="https://arxiv.org/html/2411.11922v1">SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking with Motion-Aware Memory</a></h3>
+            <p><strong>Abstract:</strong> This paper proposes an adaptation of SAM 2, specifically designed for visual object tracking. SAMURAI operates in real time and incorporates a streaming memory architecture which enables it to process video frames sequentially  while maintaining context over long sequences. The method proposed incorporates two key advancements: 1) a motion modeling system that refines the mask selection, enabling more accurate object position prediction in complex scenarios, and 2) an optimized memory selection mechanism that leverage a hybrid scoring system, combining the original mask affinity object and motion scores to retain more relevant historical information.</p>
+            <h3>Cinema</h3>
             <h3><a href="https://peerj.com/preprints/3190.pdf">Forecasting at Scale</a></h3>
             <p><strong>Abstract:</strong> This article presents “Prophet”: an additive regression model with four main components: 1) a piecewise linear or logistic growth curve trend; 2) a yearly seasonal component modelled using Fourier series; 3) a weekly seasonal component using dummy variables; and 4) a user-provided list of important holidays.</p>
             <p>Some remarkable points are that Prophet automatically detects changes in trends by selecting changepoints from the data and the main objective of this procedure is to face the problem of generating reliable time series forecasts at scale, this means “forecasting a large number and a variety of time series”. </p>
